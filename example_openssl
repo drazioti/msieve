@@ -1,3 +1,4 @@
+# Author : K.Draziotis
 #!/bin/bash
 # generate an RSA modulus with 100 - bits using openssl
 openssl genrsa -out example.key 224
