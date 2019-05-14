@@ -1,0 +1,8 @@
+#!/bin/bash
+# generate an RSA modulus with 100 - bits using openssl
+openssl genrsa -out example.key 300
+openssl rsa -in example.key -noout -modulus > hex.out
+awk -F '=' '{print $2}' hex.out > dec.out
+sed -i '1s/^/ibase=16;\n/' dec.out
+echo "Modulus RSA:";cat dec.out|bc
+rm example.key hex.out dec.out
