@@ -1,5 +1,6 @@
 #!/bin/bash
 # generate an RSA modulus with specific number of bits using openssl
+# to install use $make -j 4 x86_64
 # how to use it: $sh script.sh
 # Author : K.Draziotis (2019)
 
@@ -11,6 +12,6 @@ echo "Modulus RSA:\n";cat dec.out|bc;echo "\n";
 cat dec.out|bc > rsa.out
 rm example.key hex.out dec.out
 
-# finally you've to run
+# finally you've to remove "/" from rsa.out and then run
 # $time ./msieve -i rsa.out -t 4 -q
 #TODO: remove "/" from rsa.txt	
